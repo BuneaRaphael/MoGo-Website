@@ -1,0 +1,40 @@
+$primaryColor: #f38181;
+$secondaryColor: #fce38a;
+$iconColor: #eaffd0;
+$highlightsColor: #95e1d3;
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+.banner {
+  background-color: $primaryColor;
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: top 45px;
+    padding: left 8%;
+    padding: right 8%;
+
+    .banner__logo {
+      color: white;
+      font-size: 35px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+    ul {
+      li {
+        list-style-type: none;
+        padding: 10px 7px;
+        display: inline-block;
+        a {
+          color: $secondaryColor;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
