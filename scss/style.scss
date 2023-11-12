@@ -75,7 +75,7 @@ $highlightsColor: #95e1d3;
     h2 {
       font-family: "Kaushan Script", cursive;
       color: white;
-      font-size: 2.5rem;
+      font-size: 36px;
     }
     h1 {
       color: white;
@@ -90,8 +90,129 @@ $highlightsColor: #95e1d3;
   }
 }
 
-article,
+article {
+  .services {
+    max-width: 1200px;
+    margin: 20px auto;
+    .services__title {
+      text-align: center;
+      letter-spacing: 1px;
+      h3 {
+        font-family: "Kaushan Script", cursive;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      h1 {
+        font-size: 23px;
+        padding-bottom: 20px;
+      }
+    }
+    .services__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 60px;
+
+      .services__grid--service {
+        grid-column: span 1;
+        display: grid;
+        grid-template-columns: 5;
+        font-size: 10px;
+
+        img {
+          grid-column: span 1;
+          padding-right: 1rem;
+        }
+        h3 {
+          grid-column: 2 \5;
+        }
+        p {
+          grid-column: 2 \5;
+
+          color: gray;
+        }
+      }
+    }
+  }
+  .team {
+    max-width: 1200px;
+    margin: 20px auto;
+    .team__title {
+      text-align: center;
+      letter-spacing: 1px;
+      h3 {
+        font-family: "Kaushan Script", cursive;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      h1 {
+        font-size: 23px;
+        padding-bottom: 20px;
+      }
+    }
+    .team__grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 35px;
+
+      p {
+        font-size: 10px;
+        color: gray;
+        grid-column: span 12;
+      }
+      .team__grid--member {
+        img {
+          max-width: 240px;
+          padding-bottom: 20px;
+        }
+        h4 {
+          text-align: center;
+          font-size: 10px;
+          padding-bottom: 10px;
+        }
+        p {
+          text-align: center;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
 footer {
+  border-top: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 20px 306px;
+  div {
+    font-size: 14px;
+    text-align: center;
+    span {
+      color: red;
+    }
+  }
+  form {
+    font-size: 0;
+    input {
+      color: lightgray;
+      padding: 5px;
+      border: 1px solid lightgray;
+      margin: 0;
+      display: inline-block;
+    }
+    input::placeholder {
+      color: lightgray;
+    }
+    button {
+      padding: 5px;
+      color: white;
+      border: 1px solid $highlightsColor;
+      background-color: $highlightsColor;
+    }
+  }
+}
+
+article {
   padding-left: 306px;
   padding-right: 306px;
   padding-top: 25px;
