@@ -29,28 +29,24 @@ $highlightsColor: #95e1d3;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 306px;
-    padding-right: 306px;
-    padding-top: 25px;
-    margin: 0px, 50px;
+    margin: 0 auto;
 
     .banner__logo {
       color: white;
-      font-size: 18px;
+      font-size: 14px;
       letter-spacing: 1px;
       cursor: pointer;
+      padding-left: 10px;
     }
     ul {
-      font-size: 14px;
+      font-size: 10px;
       display: flex;
-
       align-items: center;
 
       li {
         list-style-type: none;
-        padding-left: 27px;
-        padding-top: 10px;
-        display: inline-block;
+        padding: 10px;
+
         a {
           color: white;
           letter-spacing: 1px;
@@ -65,6 +61,7 @@ $highlightsColor: #95e1d3;
     }
   }
   .welcome {
+    cursor: default;
     position: absolute;
     top: 30%;
     left: 50%;
@@ -72,20 +69,26 @@ $highlightsColor: #95e1d3;
     transform: translateX(-50%);
     text-align: center;
 
-    h2 {
-      font-family: "Kaushan Script", cursive;
-      color: white;
-      font-size: 36px;
+    div {
+      margin-bottom: 20px;
+      h2 {
+        font-family: "Kaushan Script", cursive;
+        color: white;
+
+        margin-bottom: 10px;
+      }
+      h1 {
+        color: white;
+      }
     }
-    h1 {
-      color: white;
-      font-size: 4rem;
-    }
+
     a {
       color: white;
       border: 2px solid white;
-      padding: 2px 12px;
-      font-size: 0.5rem;
+      padding: 6px 15px;
+      font-size: 0.7rem;
+      cursor: pointer;
+      text-decoration: none;
     }
   }
 }
@@ -97,19 +100,30 @@ article {
     .services__title {
       text-align: center;
       letter-spacing: 1px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+
       h3 {
         font-family: "Kaushan Script", cursive;
         font-size: 24px;
-        margin-bottom: 10px;
+        margin-bottom: 13px;
       }
       h1 {
         font-size: 23px;
-        padding-bottom: 20px;
+        padding-bottom: 22px;
       }
     }
+    .services__title::after {
+      content: "";
+      display: block;
+      width: 10%;
+      border-bottom: 3px solid red;
+      margin: 0 auto;
+    }
     .services__grid {
+      margin: 50px auto;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+
       gap: 60px;
 
       .services__grid--service {
@@ -127,7 +141,6 @@ article {
         }
         p {
           grid-column: 2 \5;
-
           color: gray;
         }
       }
@@ -137,6 +150,8 @@ article {
     max-width: 1200px;
     margin: 20px auto;
     .team__title {
+      margin-top: 25px;
+      margin-bottom: 25px;
       text-align: center;
       letter-spacing: 1px;
       h3 {
@@ -149,25 +164,34 @@ article {
         padding-bottom: 20px;
       }
     }
+    .team__title::after {
+      content: "";
+      display: block;
+      width: 10%;
+      border-bottom: 3px solid red;
+      margin: 0 auto;
+    }
+    p {
+      font-size: 12px;
+      color: gray;
+      grid-column: span 12;
+      text-align: justify;
+    }
     .team__grid {
+      margin-top: 50px;
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 35px;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 60px;
 
-      p {
-        font-size: 10px;
-        color: gray;
-        grid-column: span 12;
-      }
       .team__grid--member {
         img {
-          max-width: 240px;
-          padding-bottom: 20px;
+          max-width: 245px;
         }
         h4 {
           text-align: center;
-          font-size: 10px;
+          font-size: 14px;
           padding-bottom: 10px;
+          margin-top: 20px;
         }
         p {
           text-align: center;
@@ -182,10 +206,11 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  margin: 20px 306px;
+  padding: 10px 0px;
+
   div {
-    font-size: 14px;
+    font-size: 10px;
+    font-weight: bold;
     text-align: center;
     span {
       color: red;
@@ -212,9 +237,60 @@ footer {
   }
 }
 
-article {
-  padding-left: 306px;
-  padding-right: 306px;
-  padding-top: 25px;
-  margin: 0px, 50px;
+img {
+  width: 100%;
+  aspect-ratio: 1\1;
+  object-fit: cover;
+}
+
+@media (min-width: 1000px) {
+  .banner {
+    nav {
+      padding: 25px 360px 0px 360px;
+    }
+  }
+  article {
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 25px;
+  }
+  footer {
+    margin: 20px 300px 0px 300px;
+  }
+}
+
+@media (min-width: 625px) {
+  .banner {
+    nav {
+      ul {
+        li {
+          padding-left: 30px;
+          padding-top: 10px;
+          display: inline-block;
+        }
+      }
+    }
+    .welcome {
+      div {
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 35px;
+      }
+      h1 {
+        font-size: 4.5rem;
+      }
+    }
+  }
+  .services__grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    .services__grid--service {
+      grid-column: span 1;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .banner__logo {
+    display: none;
+  }
 }
