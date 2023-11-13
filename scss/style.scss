@@ -184,9 +184,54 @@ article {
       gap: 60px;
 
       .team__grid--member {
-        img {
-          max-width: 245px;
+        .box {
+          position: relative;
+          &:hover .imgBox {
+            transform: translate(-0.7rem, -0.7rem);
+          }
+          .highlights {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #95e1d3;
+            transition: 0.5s ease-in-out;
+          }
+          .imgBox {
+            position: relative;
+            aspect-ratio: 3/4;
+            z-index: 1;
+            transition: 0.5s ease-in-out;
+            img {
+              max-width: 245px;
+              object-fit: cover;
+              height: 100%;
+              width: 100%;
+              display: block;
+            }
+            .gradient {
+              height: 100%;
+              width: 100%;
+              background-image: linear-gradient(
+                to bottom,
+                $primaryColor,
+                $secondaryColor
+              );
+              position: absolute;
+              top: 0;
+              left: 0;
+              opacity: 0;
+              transition: all 0.4s ease-in-out;
+            }
+            &:hover {
+              .gradient {
+                opacity: 0.8;
+              }
+            }
+          }
         }
+
         h4 {
           text-align: center;
           font-size: 14px;
@@ -233,6 +278,7 @@ footer {
       color: white;
       border: 1px solid $highlightsColor;
       background-color: $highlightsColor;
+      cursor: pointer;
     }
   }
 }
