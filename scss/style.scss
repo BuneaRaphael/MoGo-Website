@@ -203,49 +203,80 @@ article {
             aspect-ratio: 3/4;
             z-index: 1;
             transition: 0.5s ease-in-out;
-            img {
+            .member {
               max-width: 245px;
               object-fit: cover;
               height: 100%;
               width: 100%;
               display: block;
             }
-            .gradient {
-              height: 100%;
-              width: 100%;
-              background-image: linear-gradient(
-                to bottom,
-                $primaryColor,
-                $secondaryColor
-              );
+            .socials {
               position: absolute;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
               top: 0;
               left: 0;
               opacity: 0;
               transition: all 0.4s ease-in-out;
-            }
-            &:hover {
-              .gradient {
-                opacity: 0.8;
+              a {
+                background-color: $secondaryColor;
+                padding: 5px;
+                display: inline-block;
+                max-width: 30px;
+                flex: 1;
+
+                img {
+                  object-fit: contain;
+                  aspect-ratio: 1/1;
+                }
+              }
+              a:hover {
+                background-color: $primaryColor;
               }
             }
           }
+          .gradient {
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(
+              to bottom,
+              $primaryColor,
+              $secondaryColor
+            );
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+          }
+          &:hover {
+            .gradient {
+              opacity: 0.8;
+            }
+            .socials {
+              opacity: 1;
+            }
+          }
         }
+      }
 
-        h4 {
-          text-align: center;
-          font-size: 14px;
-          padding-bottom: 10px;
-          margin-top: 20px;
-        }
-        p {
-          text-align: center;
-          font-size: 10px;
-        }
+      h4 {
+        text-align: center;
+        font-size: 14px;
+        padding-bottom: 10px;
+        margin-top: 20px;
+      }
+      p {
+        text-align: center;
+        font-size: 10px;
       }
     }
   }
 }
+
 footer {
   border-top: 1px solid lightgray;
   display: flex;
