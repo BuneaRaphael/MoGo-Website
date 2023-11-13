@@ -227,14 +227,25 @@ article {
                 display: inline-block;
                 max-width: 30px;
                 flex: 1;
-
-                img {
+                position: relative;
+                img,
+                .prime {
                   object-fit: contain;
                   aspect-ratio: 1/1;
+                }
+                .prime {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  opacity: 0;
+                  padding: 5px;
                 }
               }
               a:hover {
                 background-color: $primaryColor;
+                .prime {
+                  opacity: 1;
+                }
               }
             }
           }
@@ -369,5 +380,13 @@ img {
 @media (max-width: 500px) {
   .banner__logo {
     display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .box:hover .imgBox {
+    transform: translate(0, 3.5rem);
+  }
+  .box:hover .imgBox {
+    transform: translate(0, -3.5rem);
   }
 }
